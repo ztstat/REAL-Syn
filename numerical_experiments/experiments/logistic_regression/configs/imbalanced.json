@@ -1,0 +1,126 @@
+{
+  "config_name": "logistic_rare_positive",
+  "arm": "rare_positive",
+  "d": 5,
+  "a": 1,
+  "base": [
+    1,
+    0.8,
+    0.6,
+    0.4,
+    0.2
+  ],
+  "v": [
+    0.674199862463242,
+    0.5393598899705937,
+    0.40451991747794525,
+    0.26967994498529685,
+    0.13483997249264842
+  ],
+  "pi_p": 0.2,
+  "pi_q": 0.5,
+  "target": {
+    "factorization": "Y~Bernoulli(pi_p); X|Y=y~N(mu_py, 1.5^2 I_5)",
+    "mean_y1": [
+      0.674199862463242,
+      0.5393598899705937,
+      0.40451991747794525,
+      0.26967994498529685,
+      0.13483997249264842
+    ],
+    "mean_y0": [
+      -0.674199862463242,
+      -0.5393598899705937,
+      -0.40451991747794525,
+      -0.26967994498529685,
+      -0.13483997249264842
+    ],
+    "std": 1.5,
+    "covariance_diagonal": [
+      2.25,
+      2.25,
+      2.25,
+      2.25,
+      2.25
+    ]
+  },
+  "proposal": {
+    "factorization": "Y_tilde~Bernoulli(pi_q); X_tilde|Y_tilde=y~N(mu_qy, 2.5^2 I_5)",
+    "mean_y1": [
+      1.0393598899705938,
+      0.931487911976475,
+      0.8236159339823562,
+      0.7157439559882375,
+      0.6078719779941187
+    ],
+    "mean_y0": [
+      -0.0393598899705937,
+      0.06851208802352504,
+      0.17638406601764378,
+      0.2842560440117625,
+      0.39212802200588126
+    ],
+    "std": 2.5,
+    "covariance_diagonal": [
+      6.25,
+      6.25,
+      6.25,
+      6.25,
+      6.25
+    ]
+  },
+  "true_logistic": {
+    "intercept": -1.3862943611198906,
+    "beta": [
+      0.5992887666339929,
+      0.4794310133071944,
+      0.35957325998039574,
+      0.2397155066535972,
+      0.1198577533267986
+    ],
+    "derivation": "beta=Sigma_p^{-1}(mu_p1-mu_p0); intercept=log(pi_p/(1-pi_p)); symmetric target means make the quadratic correction zero"
+  },
+  "n_real": 100,
+  "n_candidates": 6000,
+  "n_test": 10000,
+  "alpha": 0.1,
+  "repetitions": 100,
+  "fixed_test_set_within_configuration": true,
+  "paired_data_across_methods": true,
+  "density_ratio": "oracle p(y)p(x|y)/{q(y)q(x|y)}",
+  "ratio": {
+    "clip_log_ratio": 20,
+    "clipping_bounds": [
+      -20,
+      20
+    ]
+  },
+  "solver": {
+    "method": "Newton/IRLS",
+    "ridge": 0.000001,
+    "penalize_intercept": false,
+    "max_iterations": 100,
+    "gradient_tolerance": 1e-8,
+    "backtracking_line_search": true,
+    "armijo_constant": 0.0001,
+    "backtracking_shrink": 0.5,
+    "max_backtracking_steps": 50
+  },
+  "vp_convention": "uncentered score second moment",
+  "vp_ridge": 1e-10,
+  "accepted_probability_floor_for_weight": 1e-12,
+  "seeds": {
+    "base_seed": 2734101,
+    "fixed_test_seed": 8734101,
+    "rep_seed_stride": 1337,
+    "stream_offsets": {
+      "real_data": 101,
+      "candidate_data": 211,
+      "uniform": 307,
+      "density_ratio_only": 401,
+      "influence_only": 503,
+      "real_syn": 601
+    }
+  },
+  "output_base_dir": "results"
+}

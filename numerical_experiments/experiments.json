@@ -1,0 +1,87 @@
+{
+  "ols-d1": {
+    "config": "experiments/lowdim_ols/configs/d1.json",
+    "kind": "ols",
+    "paper": "Table 1 Panel A; Appendix B.1 Tables 3 and 4"
+  },
+  "ols-d2": {
+    "config": "experiments/lowdim_ols/configs/d2.json",
+    "kind": "ols",
+    "paper": "Table 1 Panel A; Appendix B.1 Tables 3 and 4"
+  },
+  "ols-d5": {
+    "config": "experiments/lowdim_ols/configs/d5.json",
+    "kind": "ols",
+    "paper": "Table 1 Panel A; Appendix B.1 Tables 3 and 4"
+  },
+  "figure1": {
+    "config": "experiments/acceptance_visualization/configs/figure1.json",
+    "kind": "ols",
+    "paper": "Figure 1: four acceptance visualizations"
+  },
+  "figure4": {
+    "config": "experiments/acceptance_budget/configs/alpha_01_to_1.json",
+    "kind": "sweep",
+    "paper": "Appendix Figure 4: alpha=0.10,...,1.00, expected accepted=500"
+  },
+  "figure4-low-alpha": {
+    "config": "experiments/acceptance_budget/configs/alpha_001_to_01.json",
+    "kind": "sweep",
+    "paper": "Appendix Figure 4: alpha=0.01,...,0.10, expected accepted=500"
+  },
+  "highdim-sparse-d10": {
+    "config": "experiments/highdim_ols/configs/sparse_d10.json",
+    "kind": "highdim",
+    "paper": "Table 1 Panel A; Appendix Table 3"
+  },
+  "highdim-sparse-d20": {
+    "config": "experiments/highdim_ols/configs/sparse_d20.json",
+    "kind": "highdim",
+    "paper": "Table 1 Panel A; Appendix Table 3"
+  },
+  "highdim-dense-d10": {
+    "config": "experiments/highdim_ols/configs/dense_d10.json",
+    "kind": "highdim",
+    "paper": "Table 1 Panel A; Appendix Table 3"
+  },
+  "highdim-dense-d20": {
+    "config": "experiments/highdim_ols/configs/dense_d20.json",
+    "kind": "highdim",
+    "paper": "Table 1 Panel A; Appendix Table 3"
+  },
+  "logistic-imbalanced": {
+    "config": "experiments/logistic_regression/configs/imbalanced.json",
+    "kind": "logistic",
+    "paper": "Table 1 Panel B: pi_p=0.2, pi_q=0.5"
+  },
+  "logistic-balanced": {
+    "config": "experiments/logistic_regression/configs/balanced.json",
+    "kind": "logistic",
+    "paper": "Table 1 Panel B: pi_p=pi_q=0.5"
+  },
+  "table2": {
+    "config": "experiments/weighting_resampling/configs/equal_budget.json",
+    "kind": "equal_budget",
+    "paper": "Table 2: nominal B=600 SIR/SNIS comparison"
+  },
+  "full-pool-alpha": {
+    "config": "experiments/full_pool_importance_weighting/configs/fixed_pool.json",
+    "kind": "full_pool",
+    "paper": "Section 4.2 and Appendix B.2: M=6000 fixed, All-IW and alpha sweep"
+  },
+  "ratio-misspecification": {
+    "config": "experiments/density_ratio_sensitivity/configs/lambda_grid.json",
+    "kind": "ratio",
+    "paper": "Appendix B.1 Table 5: lambda=0,.05,.10,.15,.20"
+  },
+  "proposal-grid": {
+    "config": "experiments/proposal_mismatch/configs/local_grid.json",
+    "kind": "grid",
+    "paper": "Appendix B.1 Table 6: local 3x3 grid"
+  },
+  "proposal-stress": {
+    "config": "experiments/proposal_mismatch/configs/stress_grid.json",
+    "kind": "stress",
+    "paper": "Appendix B.1 severe G6; six-cell paired sweep"
+  }
+}

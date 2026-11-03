@@ -1,0 +1,69 @@
+{
+  "active_model_module": "common.ols_model",
+  "seed": 0,
+  "output_base_dir": "results",
+  "experiment_name": "alpha_001_to_01",
+  "alpha_sweep": {
+    "experiment_name": "alpha_sweep_d1_fixed_acceptance_moderate_low_alpha",
+    "alphas": [
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09,
+      0.1
+    ],
+    "candidate_pool_mode": "fixed_expected_accept_count",
+    "target_expected_accept_count": 500
+  },
+  "pipeline": {
+    "reps": 300,
+    "n_candidates": 50000,
+    "alpha": 0.01,
+    "vp_ridge": 1e-10,
+    "rep_seed_stride": 1337,
+    "save_candidate_csv": false,
+    "save_histograms": false,
+    "make_xy_band_plots": false
+  },
+  "data": {
+    "n_train": 40,
+    "n_test": 8000,
+    "x_dim": 1,
+    "x_mean": [
+      0
+    ],
+    "x_std": [
+      1.5
+    ],
+    "beta": [
+      1
+    ],
+    "intercept": 0,
+    "noise_std": 0.5
+  },
+  "synthetic_candidate": {
+    "x_mean": [
+      1.25
+    ],
+    "x_std": [
+      2.5
+    ],
+    "beta": [
+      0.5
+    ],
+    "intercept": 0.8,
+    "noise_std": 1.2
+  },
+  "ratio": {
+    "mode": "oracle_misspecified_gaussian",
+    "clip_log_ratio": 20
+  },
+  "model": {
+    "ridge": 1e-10
+  }
+}

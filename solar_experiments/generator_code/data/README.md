@@ -1,0 +1,11 @@
+# Shared input and generated files
+
+The source ZIP supplies code and dependency requirements. The large input CSV is distributed separately. After downloading `SHARPs_flux_temporal_u12m_w60_s10_wide.csv`, place it directly in this `data/` directory. It is the only external data asset needed for a fresh setup; the chronological split CSVs, per-run reference JSON, and model checkpoint are generated locally.
+
+Before default training, the code creates any missing `train_chronological.csv` and `test_chronological.csv` from it, using endpoint years through 2021 for training and later years for testing. Existing split files are preserved; if both exist, the source is not opened. Preparation reads endpoint dates and copies unchanged raw records without evaluating feature or flux values.
+
+After split preparation, `train_chronological.csv` contains the 74,890 generator training windows from 2010–2021 for the current source dataset and is the active training input. Only this file supplies normalization, model training, and flux fitting. `test_chronological.csv` is reserved for the downstream solar experiment. CSVs are ignored by Git. Only the full source CSV needs to be shared; both split CSVs are generated locally. A prepared training CSV can also be supplied directly with `--data-csv`; its timestamps are checked before loading feature or flux values.
+
+`condition_reference_summary.json` contains the training-only proposal parameters, fit counts, and provenance, using filenames only. No separate reference-generation step is needed. Every training run fits the proposal from its usable training rows, writes a new `condition_reference_summary.json` alongside the model in `artifacts/`, and embeds the same reference in the checkpoint. Sampling uses the embedded reference by default. A separately supplied training-only reference JSON is optional; no reference JSON is included in this source package or needed before training.
+
+From the parent directory, run `python train_generator.py` to prepare any missing splits and produce `artifacts/chronological_training_only_seed3097/model_epoch_075.pt`. A source-only ZIP does not supply these generated artifacts. New checkpoints and generated samples remain in ignored `artifacts/` and `samples/` directories.

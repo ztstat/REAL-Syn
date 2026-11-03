@@ -1,0 +1,40 @@
+{
+  "repetitions": 100,
+  "dimension": 5,
+  "n_real": 40,
+  "n_candidates": 6000,
+  "n_test": 8000,
+  "alpha": 0.1,
+  "synthetic_budget": 600,
+  "source_config": "experiments/lowdim_ols/configs/d5.json",
+  "methods": [
+    "Real-only",
+    "Uniform",
+    "DRE-only",
+    "Influence-only",
+    "REAL-Syn",
+    "Multinomial-SIR-600",
+    "Residual-SIR-600",
+    "Stratified-SIR-600",
+    "Subsampled-SNIS-600",
+    "Clipped-SNIS-600"
+  ],
+  "seeds": {
+    "base_seed": 0,
+    "rep_seed_stride": 1337,
+    "multinomial_sir_offset": 8000051,
+    "residual_sir_offset": 9000061,
+    "stratified_sir_offset": 9000071,
+    "snis_subset_offset": 9000081
+  },
+  "ratio": {
+    "type": "oracle_joint_gaussian",
+    "log_ratio_protection": [
+      -20,
+      20
+    ],
+    "pool_normalization": "none"
+  },
+  "clipped_snis_rule": "subset_mean_ratio_times_sqrt_B",
+  "output_base_dir": "results"
+}

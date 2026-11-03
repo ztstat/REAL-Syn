@@ -1,0 +1,12 @@
+__pycache__/
+.DS_Store
+artifacts/
+samples/
+.venv/
+
+# Keep the large training CSV as a separate downloadable data asset.
+!data/
+data/*.csv
+data/*.pt
+data/*.json
+!data/README.md

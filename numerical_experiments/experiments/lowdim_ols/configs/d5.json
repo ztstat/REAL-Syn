@@ -1,0 +1,76 @@
+{
+  "active_model_module": "common.ols_model",
+  "seed": 0,
+  "output_base_dir": "results",
+  "experiment_name": "d5",
+  "pipeline": {
+    "reps": 100,
+    "n_candidates": 6000,
+    "alpha": 0.1,
+    "vp_ridge": 1e-10,
+    "rep_seed_stride": 1337,
+    "save_candidate_csv": true,
+    "save_histograms": true,
+    "make_xy_band_plots": true
+  },
+  "data": {
+    "n_train": 40,
+    "n_test": 8000,
+    "x_dim": 5,
+    "x_mean": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "x_std": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "beta": [
+      1,
+      0.8,
+      0.6,
+      0.4,
+      0.2
+    ],
+    "intercept": 0,
+    "noise_std": 0.5
+  },
+  "synthetic_candidate": {
+    "x_mean": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "x_std": [
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "beta": [
+      0.8,
+      0.64,
+      0.48,
+      0.32,
+      0.16
+    ],
+    "intercept": 0.5,
+    "noise_std": 1
+  },
+  "ratio": {
+    "mode": "oracle_misspecified_gaussian",
+    "clip_log_ratio": 20
+  },
+  "model": {
+    "ridge": 1e-10
+  }
+}

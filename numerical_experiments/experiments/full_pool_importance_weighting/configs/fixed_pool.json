@@ -1,0 +1,21 @@
+{
+  "source_config": "experiments/lowdim_ols/configs/d5.json",
+  "alpha_grid": [
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1
+  ],
+  "n_candidates_fixed": 6000,
+  "methods": [
+    "Real-only",
+    "Uniform-IW",
+    "DRE-only",
+    "REAL-Syn",
+    "All-IW-matched",
+    "All-IW-full"
+  ],
+  "repetitions": 100
+}

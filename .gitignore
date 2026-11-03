@@ -1,0 +1,27 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+
+# Downloaded inputs, model weights, and generated outputs
+/numerical_experiments/results/*
+!/numerical_experiments/results/.gitkeep
+/solar_experiments/*/data/*
+!/solar_experiments/*/data/README.md
+/solar_experiments/generator_code/artifacts/
+/solar_experiments/generator_code/samples/
+/solar_experiments/chronological_solar_experiment/cache/
+/solar_experiments/chronological_solar_experiment/outputs/
+*.pt
+*.pth
+*.ckpt
+*.zip
+*.log

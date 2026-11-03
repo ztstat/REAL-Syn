@@ -1,0 +1,54 @@
+{
+  "source_config": "experiments/lowdim_ols/configs/d5.json",
+  "dimension": 5,
+  "n_real": 40,
+  "n_candidates": 6000,
+  "n_test": 8000,
+  "alpha": 0.1,
+  "ratio_regimes": [
+    {
+      "name": "shrinkage_000",
+      "lambda": 0
+    },
+    {
+      "name": "shrinkage_005",
+      "lambda": 0.05
+    },
+    {
+      "name": "shrinkage_010",
+      "lambda": 0.1
+    },
+    {
+      "name": "shrinkage_015",
+      "lambda": 0.15
+    },
+    {
+      "name": "shrinkage_020",
+      "lambda": 0.2
+    }
+  ],
+  "methods": [
+    "Real-only",
+    "Uniform-IW",
+    "DRE-only",
+    "REAL-Syn",
+    "All-IW-matched"
+  ],
+  "ratio": {
+    "source": "exact_oracle_joint_gaussian",
+    "transformation": "r_lambda=(1-lambda)*r_oracle+lambda",
+    "candidate_ratio_normalization": "none",
+    "log_ratio_protection": [
+      -20,
+      20
+    ]
+  },
+  "seeds": {
+    "base_seed": 0,
+    "rep_seed_stride": 1337,
+    "analysis_seed": 70720263
+  },
+  "bootstrap_resamples": 5000,
+  "degradation_denominator_tolerance": 1e-12,
+  "repetitions": 100
+}

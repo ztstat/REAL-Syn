@@ -1,0 +1,130 @@
+{
+  "config_name": "sparse_d10_n200",
+  "experiment_arm": "primary_sparse",
+  "dimension": 10,
+  "n_real": 200,
+  "n_candidates": 30000,
+  "expected_accepted_count": 3000,
+  "expected_accepted_to_real_ratio": 15,
+  "d_over_n": 0.05,
+  "candidate_scaling_rule": "n_candidates = 150 * n_real",
+  "beta_construction": "make_sparse_beta(d): (1,0.8,0.6,0.4,0.2,0,...,0)",
+  "active_model_module": "common.ols_model",
+  "seed": 0,
+  "output_base_dir": "results",
+  "experiment_name": "sparse_d10",
+  "pipeline": {
+    "reps": 100,
+    "n_candidates": 30000,
+    "alpha": 0.1,
+    "vp_ridge": 1e-10,
+    "rep_seed_stride": 1337,
+    "save_candidate_csv": false,
+    "save_histograms": false,
+    "make_xy_band_plots": false
+  },
+  "data": {
+    "n_train": 200,
+    "n_test": 8000,
+    "x_dim": 10,
+    "x_mean": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "x_std": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "beta": [
+      1,
+      0.8,
+      0.6,
+      0.4,
+      0.2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "intercept": 0,
+    "noise_std": 0.5
+  },
+  "synthetic_candidate": {
+    "x_mean": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "x_std": [
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "beta": [
+      0.8,
+      0.64,
+      0.48,
+      0.32,
+      0.16,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "intercept": 0.5,
+    "noise_std": 1
+  },
+  "ratio": {
+    "mode": "oracle_misspecified_gaussian",
+    "clip_log_ratio": 20
+  },
+  "model": {
+    "ridge": 1e-10
+  },
+  "numerical_protection": {
+    "log_ratio_clip": [
+      -20,
+      20
+    ],
+    "acceptance_probability_bounds": [
+      0,
+      1
+    ],
+    "accepted_probability_floor_for_weight": 1e-12,
+    "vp_ridge": 1e-10,
+    "ols_ridge": 1e-10,
+    "negative_quadratic_form_floor": 0
+  }
+}
